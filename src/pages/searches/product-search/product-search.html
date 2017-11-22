@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pesquisa de Produto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar placeholder="Filtro de Produto" (ionInput)="filterItems($event)"></ion-searchbar>
+    <button ion-button icon-start block color="button-alt"(click)="onScanCode()">     
+      <ion-icon name="qr-scanner"></ion-icon>
+      Escanear código
+    </button>
+    
+
+    <ion-list >
+      <ion-list-header>
+        Produtos
+      </ion-list-header>    
+         
+      <ion-item *ngFor="let prod of products" #item (click)="onChooseProduct(prod)">
+        <ion-avatar item-start>
+          <img [src]="prod.image">
+        </ion-avatar>
+        <h2>{{prod.code}}</h2>
+        <p>{{prod.description}}</p>
+        <ion-note item-end>
+          {{prod.price |  number:'1.2-2'}}
+        </ion-note>
+      </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+  <button ion-button block outline color="danger" (click)="onClose()">Cancelar</button>
+  
+</ion-footer>

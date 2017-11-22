@@ -1,0 +1,57 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Itens do Orçamento</ion-title>
+    <ion-buttons right>
+        <!-- <button ion-button (click)="addItem()">
+            <ion-icon name="add"></ion-icon>
+        </button>          -->
+    </ion-buttons>   
+  </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content padding> 
+    <div text-center>
+    <img *ngIf="itens.length == 0"  src="assets/images/noResult.jpg" >
+    </div>
+  <ion-list *ngFor="let item of itens let i = index" >
+    <ion-item-sliding >
+      <ion-item (click)="onChangeItem(item, i)">
+          
+         <ion-avatar item-start>
+            <img [src]="item.product.image">
+         </ion-avatar>
+          
+          <p>#{{item.itemId}}</p> 
+          <h5>{{item.product.code}}</h5>
+          <p>{{item.product.description}}</p>
+          <p [class.item-where-deposit]="item.whereToTake == 'Loja'" [class.item-where-local]="item.whereToTake != 'Loja'">{{item.whereToTake}}</p>
+          
+          <ion-note item-end color="danger">
+            <h2 > {{item.total | currency:'BRL':true}} </h2>
+            <p >Qtd: {{item.quantity}}</p>
+          </ion-note>
+      </ion-item>
+
+   
+      <ion-item-options  icon-start>
+          <button ion-button color="danger" (click)="removeItem(i)">
+              <ion-icon name="trash"></ion-icon>
+              Deletar
+          </button>      
+        <button ion-button color="secondary" (click)="setWhereToTake(item)">
+            <ion-icon name="archive"></ion-icon>
+            Retirar
+        </button>        
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-fab bottom right>
+      <button color="fabButton"ion-fab (click)="addItem()"><ion-icon name="add"></ion-icon></button>        
+  </ion-fab>
+</ion-footer>

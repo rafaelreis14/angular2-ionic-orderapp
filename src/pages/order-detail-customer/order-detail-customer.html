@@ -1,0 +1,84 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Informações do Cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <customer-input (onCustomerChange)="customerChanging($event)"></customer-input>
+  <ion-card> 
+    <ion-card-header>
+      <h2>Endereço de Entrega</h2>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-grid>
+            <ion-row> 
+              <ion-col>
+                  <ion-item>  
+                    <ion-label floating>Endereço 1</ion-label>
+                    <ion-input [(ngModel)]="order?.deliveyAddress.address1" type="text" ></ion-input>        
+                  </ion-item>
+      
+              </ion-col>                 
+            </ion-row>
+            <ion-row> 
+                <ion-col width-75>
+                    <ion-item>
+                      <ion-label floating>Endereço 2</ion-label>
+                      <ion-input [(ngModel)]="order?.deliveyAddress.address2" type="text" ></ion-input>        
+                    </ion-item>
+                </ion-col>
+                <ion-col width-25>
+                    <ion-item>
+                      <ion-label floating>Número</ion-label>
+                      <ion-input  [(ngModel)]="order?.deliveyAddress.number" type="text"></ion-input>        
+                    </ion-item>
+                </ion-col>          
+            </ion-row>
+            <ion-row> 
+                <ion-col>
+                    <ion-item>  
+                      <ion-label floating>Referênecia</ion-label>
+                      <ion-input  [(ngModel)]="order?.deliveyAddress.reference" type="text"></ion-input>        
+                    </ion-item>
+                </ion-col>                 
+              </ion-row>
+              <ion-row> 
+                  <ion-col width-75>
+                      <ion-item>  
+                        <ion-label floating>Cidade</ion-label>
+                        <ion-input  [(ngModel)]="order?.deliveyAddress.city" type="text" ></ion-input>                      
+                      </ion-item>
+                  </ion-col>
+      
+                  <ion-col width-25>
+                      <ion-item>
+                        <ion-label floating>Estado</ion-label>
+                        <ion-input [(ngModel)]="order?.deliveyAddress.state" type="text" ></ion-input>
+                      </ion-item>
+                  </ion-col>          
+              </ion-row>
+              <ion-row> 
+                  <ion-col width-50>
+                      <ion-item>
+                        <ion-label floating>País</ion-label>
+                        <ion-input [(ngModel)]="order?.deliveyAddress.country" type="text" ></ion-input>        
+                      </ion-item>
+                  </ion-col>
+                  <ion-col width-50>
+                      <ion-item>
+                        <ion-label floating>CEP</ion-label>
+                        <ion-input  [(ngModel)]="order?.deliveyAddress.zipcode"type="text"></ion-input>        
+                      </ion-item>
+                  </ion-col>          
+              </ion-row>
+          </ion-grid>
+    </ion-card-content>
+    
+  </ion-card>
+
+
+</ion-content>

@@ -1,0 +1,102 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pagamento</ion-title>
+  </ion-navbar>
+  <ion-item class="remain-header">         
+      <p>
+        Valor Remanescente:  
+      </p>
+      <ion-note item-end  >
+          <h2 color="danger">{{remainValue | currency:'BRL':true}}</h2>
+      </ion-note>
+      
+  </ion-item>
+
+</ion-header>
+
+
+<ion-content padding>
+   
+    <br>
+    <ion-list radio-group class="rgSelect">        
+          <ion-list-header>
+            Escolha a condição
+          </ion-list-header>
+        
+          <ion-item>
+            <ion-note item-start>
+              <ion-icon name="cash"></ion-icon>
+            </ion-note>            
+            <ion-label>Dinheiro</ion-label>
+            <ion-radio value="_type.Dinheiro" checked="true" (ionSelect)="onChoosingType(_type.Dinheiro)"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-note item-start>
+                <ion-icon name="card"></ion-icon>
+            </ion-note>            
+            <ion-label>Cartão de Crédito</ion-label>
+            <ion-radio value="_type.Credito" (ionSelect)="onChoosingType(_type.Credito)" ></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-note item-start>
+                  <ion-icon name="card"></ion-icon>
+                </ion-note>            
+            <ion-label>Cartao de Débito</ion-label>
+            <ion-radio value="_type.Debito" (ionSelect)="onChoosingType(_type.Debito)"></ion-radio>
+          </ion-item>
+    </ion-list>
+   
+          
+    <ion-item>
+      <ion-label stacked color="primary">Valor</ion-label>
+      <ion-input type="number" placeholder="Infome o valor da parcela." #inp></ion-input>          
+      <ion-note item-end>
+          <button class="button-add"ion-button icon-only color="button-alt" (click)="addPayment(inp)">
+              <ion-icon color="primary" name="add-circle"></ion-icon>
+          </button>          
+      </ion-note>
+      
+     </ion-item>
+     
+     
+     <ion-list-header *ngIf="(order?.payments.length > 0)">
+        Condições de Pagamento
+    </ion-list-header>
+     
+     <div *ngIf="!(order?.payments.length > 0)" text-center>
+      <img src="assets/images/noResult.jpg" >
+     </div>
+
+     <ion-list *ngFor="let payment of order?.payments; let i = index">
+
+       <ion-item-sliding>
+        <ion-item >
+        
+              <ion-note item-start>              
+                  <p>#{{i+1}}</p>  
+                  <ion-icon *ngIf="payment.type == _type.Dinheiro"  name="cash"></ion-icon>
+                  <ion-icon *ngIf="payment.type != _type.Dinheiro" name="card"></ion-icon>                              
+              </ion-note>  
+              <h2>{{_type[payment.type]}}</h2>
+              <ion-note item-end>
+                  <p>{{payment.value | currency:'BRL':true}}</p>
+              </ion-note> 
+                    
+        </ion-item>
+        <ion-item-options  icon-start>
+            <button ion-button color="danger" (click)="removePayment(i)">
+                <ion-icon name="trash"></ion-icon>
+                Deletar
+            </button>                  
+        </ion-item-options>    
+      </ion-item-sliding> 
+       
+     </ion-list>
+  
+    
+  
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pesquisa de Cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar placeholder="Filtro de Cliente" (ionInput)="onFilterCustomer($event)"></ion-searchbar>
+    <ion-list >
+      <ion-list-header>
+        Clientes
+      </ion-list-header>    
+         
+      <ion-item *ngFor="let customer of customers" #item (click)="onChooseCustomer(customer)">
+        <h2>{{customer.name}}</h2>
+        <p>{{customer.customerID}}</p>        
+      </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+  <button ion-button block outline color="danger" (click)="onClose()">Cancelar</button>
+  
+</ion-footer>

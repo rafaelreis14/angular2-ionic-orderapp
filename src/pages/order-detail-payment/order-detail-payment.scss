@@ -1,0 +1,22 @@
+page-order-detail-payment {
+    .rgSelect  {
+        ion-item  {        
+            background-color: white;        
+            ion-label {
+                font-size: 13px;
+                color: red;
+            }
+        }
+    }
+
+    .button-add{
+        font-size:13px
+    }
+
+    .remain-header{
+        background-color: $theme-color-2;
+        color:$white-a;
+
+
+    }
+}

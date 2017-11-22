@@ -1,0 +1,14 @@
+<ion-list padding>
+        <ion-item>
+          <ion-label color="primary">{{description}}:</ion-label>
+          <ion-input type="number" [(ngModel)]="newValue" placeholder={{description}} (blur)="onBlurQuantity()"  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"> </ion-input>        
+        </ion-item>
+        <ion-item text-center >
+        <button ion-button round small color="button-alt" (click)="onIncrease()">
+                <ion-icon name="add"></ion-icon>
+        </button>
+        <button ion-button round small color="button-alt" (click)="onDecrease()">
+                <ion-icon name="remove"></ion-icon>
+        </button>      
+    </ion-item>    
+</ion-list>

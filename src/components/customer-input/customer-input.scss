@@ -1,0 +1,25 @@
+customer-input {
+    .background
+    {  
+        background-color: $theme-color-3;
+        border: none !important;
+    }   
+
+    .icon-customer {
+        font-size: 40px;
+        color: $theme-color-1;
+      }
+    .button{
+        font-size: 12px;
+    }
+
+
+    .customer{
+        font-size:13px ; 
+        //color:#CCFE00;
+        white-space: normal; 
+
+    }
+
+
+}

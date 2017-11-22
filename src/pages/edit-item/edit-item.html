@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{mode}} Item</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding> 
+
+
+<ion-card>            
+  <div>
+    <p>#{{item.product.code}}</p>  
+  </div>
+  <img  [src]="item.product.image">
+
+    <ion-card-content>
+        <ion-card-title color="descricao">
+          {{item.product.description}}
+        </ion-card-title>
+         
+        <p class="price"> {{item.product.price |  currency:'BRL':true }}<span *ngIf="item.product.salePrice > 0" >{{item.product.salePrice |  currency:'BRL':true}}</span></p>
+        
+    </ion-card-content>
+    <ion-item class="background">
+      <ion-note item-start>
+          Total do Produto: 
+      </ion-note>
+        
+      <ion-note item-end color="danger">
+        <h2>{{item.total |  currency:'BRL':true}}</h2> 
+      </ion-note>
+        
+    </ion-item>
+
+    <counter-input [newValue]="item.quantity" description="Quantidade" (valueChanged)="onValueChanged($event)"></counter-input>
+    
+  </ion-card>
+  <button ion-button round block (click)="onAddItem()">Confirmar</button>
+  <button ion-button round block color="button-alt" (click)="onCancel()">Cancelar</button>
+ 
+</ion-content>
+
+

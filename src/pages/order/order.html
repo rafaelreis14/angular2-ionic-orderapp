@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>      
+    <ion-title>Meus Orçamentos</ion-title>
+    <ion-buttons end>
+        <!-- <button ion-button icon-only (click)="onNewOrder()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+         -->
+      </ion-buttons>
+  </ion-navbar>
+  <data-change [startDate]="startDate"></data-change>
+</ion-header>
+
+
+<ion-content padding>
+    <div text-center>
+        <img *ngIf="orders == null"  src="assets/images/nenhumResultado.jpg" >
+    </div>
+
+
+</ion-content>
+<ion-footer>
+    <ion-fab bottom right>
+        <button color="fabButton"ion-fab (click)="onNewOrder()"><ion-icon name="add"></ion-icon></button>        
+    </ion-fab>
+</ion-footer>

@@ -1,0 +1,15 @@
+<ion-row text-center> 
+  <ion-col width-10>
+       <button ion-button clear round color="button-alt" (click)="previousMonths()">
+           <ion-icon name="arrow-dropleft-circle"></ion-icon>
+       </button>       
+  </ion-col>
+  <ion-col width-75 >
+      <h4 class="date">{{stringDate}} </h4>
+  </ion-col>
+  <ion-col width-10>
+      <button ion-button clear round color="button-alt" (click)="nextsMonths()">
+          <ion-icon name="arrow-dropright-circle"></ion-icon>
+      </button>
+  </ion-col>
+</ion-row>

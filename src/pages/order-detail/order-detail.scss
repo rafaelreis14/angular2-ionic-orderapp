@@ -1,0 +1,60 @@
+page-order-detail {
+    .content{
+        background-color: color($colors, background, base);
+    }
+
+    .table {
+        display:table;
+        width:100%;
+  
+     }
+     
+     .table-cell {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        width:350px;
+        height:auto;
+     }
+     .card { border-radius : 15px; }
+
+
+    .content p{        
+        width:auto;
+    }
+    
+    .total{
+        font-size: 35px;
+        color:red;
+    }
+
+    .name{
+          white-space: normal;
+    }
+   
+
+    .order-header{
+        font-size: 15px;
+        color:grey
+
+    }
+
+    .content .price{
+        color:blue;
+        font-size:13px;
+        }	
+    
+    .content .price>span{
+            font-size:13px;
+            //text-decoration:line-through;
+            color:$theme-color-4;
+            //color:#4e4e4e;
+            float:right
+        }	
+    .select{
+        font-size:13px;
+        color: $theme-color-2;
+    }
+
+
+}

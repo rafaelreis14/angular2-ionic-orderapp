@@ -1,0 +1,44 @@
+{
+    "product": [
+        {
+            "code":"000001",
+            "name":"MANGUEIRA CORRUGADA AMARELA TIGRE DN-25MM ROLO 50 METROS",
+            "price":87.37,
+            "salePrice":49.90,        
+            "image":"./assets/images/mangueira.jpg",
+            "discountPercent":15
+        },
+        {
+            "code":"000002",
+            "name":"SERRA BOSCH TICO TICO 400W ELETRONICA GST65",
+            "price":459.62,
+            "salePrice":353.90,        
+            "image":"./assets/images/serra.jpg",
+            "discountPercent":30
+        },
+        {
+            "code":"000003",
+            "name":"TINTA GLASURIT LATÉX ACRILICO ECONOMICO 18 LITROS",
+            "price":129.90,
+            "salePrice": 90.50,        
+            "image":"./assets/images/tinta.jpg",
+            "discountPercent":20
+        },
+        {
+            "code":"000004",
+            "name":"TORNEIRA DECA 1166.C.LNK COZINHA MESA LINK CROMADO",
+            "price":405.49,
+            "salePrice": 350.90,        
+            "image":"./assets/images/torneira.jpg",
+            "discountPercent":45
+        },
+        {
+            "code":"000005",
+            "name":"VENTILADOR TRON CLEAN ANTI-INSETO 3 PAS 127V",
+            "price":363.93,
+            "salePrice": 310,        
+            "image":"./assets/images/ventilador.jpg",
+            "discountPercent":35
+        }
+    ]
+}

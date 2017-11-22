@@ -1,0 +1,89 @@
+
+<ion-header>
+  
+  
+  <ion-navbar>
+      
+      <ion-buttons left>
+          <button ion-button (click)="popPage()">
+              <ion-icon name="undo"></ion-icon>
+          </button>         
+      </ion-buttons>
+   
+    <ion-title>Orçamento</ion-title>   
+    <ion-buttons right>
+        <button ion-button >
+            <ion-icon  name="more"></ion-icon>
+        </button>         
+    </ion-buttons>     
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="content">
+    <div class="table">
+        <div class="table-cell">
+            <hr />
+        </div>
+        <div class="table-cell">
+                <p class="order-header"> #1 - 01/01/2016 </p>
+        </div>
+        <div class="table-cell">
+            <hr />
+        </div>
+    </div>    
+    <ion-card class="card" padding>               
+        <ion-card-content>
+                <div text-center>
+                        <h1>#1</h1>
+                        <p>26 fev de 2017</p>                      
+                        <h1 class="total">{{order?.netTotal |currency:'BRL':true}}</h1>
+                </div>
+                <br>
+                    
+                    <ion-item>
+                        <ion-icon name="contacts" item-left large ></ion-icon>
+                        <h2 class="name">{{order?.seller?.name}}</h2>
+                        <p>{{order?.seller?.sellerId}}</p>
+                    </ion-item>
+                    <ion-item>                            
+                        <ion-icon name="contact" item-left large ></ion-icon>
+                        <h2 class="name">{{order?.customer?.name}}</h2>
+                        <p>{{order?.orderNumber}}</p>
+                    </ion-item>     
+                    <br> 
+
+            <h3>RESUMO DO PEDIDO</h3>
+            <hr>
+            <h5 class="price">Total Bruto <span>{{order?.grossTotal |currency:'BRL':true}}</span></h5>
+            <h5 class="price">Total Líquido <span>{{order?.netTotal |currency:'BRL':true}}</span></h5>
+            <h5 class="price">Desconto <span>{{order?.discount |currency:'BRL':true}}</span></h5>
+            <h5 class="price">Desconto PROMO <span>{{order?.discountPROMO |currency:'BRL':true}}</span></h5>
+            <h5 class="price">Despesa <span>{{order?.transportExpense |currency:'BRL':true}}</span></h5>
+       
+
+            <ion-list>
+                <ion-item>
+                            <button ion-button icon-left clear item-right >
+                                    <ion-icon name="remove-circle"></ion-icon>
+                                        Descontos e Despesas
+                                </button>
+                </ion-item>
+                <ion-item class="select">
+                        <ion-label Floation >Uso Orçamento</ion-label>
+                        <ion-select >
+                          <ion-option *ngFor="let option of selectOptions" [value]="option" >{{option}}</ion-option>
+                        </ion-select>                 
+                </ion-item>
+              
+            </ion-list>    
+            <br>
+                
+            <button ion-button block color="button-alt" round>      
+                Finalizar Orçamento 
+
+            </button>
+        
+        
+    </ion-card-content>
+    </ion-card>
+</ion-content>

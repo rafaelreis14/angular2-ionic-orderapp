@@ -1,0 +1,54 @@
+<ion-header class="walkthrough-header">
+    <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button class="skip-button" (click)="skipIntro()" [hidden]="lastSlide">Pular</button>
+        </ion-buttons>
+      </ion-toolbar>  
+    
+</ion-header>
+
+    <ion-content padding class="walkthrough-content">        
+        <ion-slides #slider (ionSlideDidChange)="onSlideChanged()" pager="true">
+          <ion-slide>
+            <ion-row>
+              <ion-col center width-64 no-padding>
+                
+                <img class='img'src='assets/images/logo.png'/>
+              </ion-col>
+            </ion-row>
+            <h2 class="main-title">Bem vindo!</h2>
+            <p class="intro-text">
+              Este é o novo App da <b>Todimo</b>
+            </p>
+          </ion-slide>         
+          <ion-slide class="slide-4">
+            <ion-row class="intro-image-row">
+              <ion-col center width-64 no-padding>
+                  <img class='img' src='assets/images/logo.png'/>
+              </ion-col>
+            </ion-row>
+            <h2 class="main-title">Quase lá!</h2>
+            <p class="intro-text">
+              Entre com sua conta.
+            </p>
+            <p class="intro-text">
+              Quase tudo pronto para usar!
+            </p>
+            <div>
+              <ion-row>
+                <ion-col width-50>
+                    <button ion-button color="button" block (click)="goToLogin()">Login</button>
+                  
+                </ion-col>
+                <ion-col width-50>
+                    <button ion-button color="button" block (click)="goToSignup()">Crie sua conta</button>
+                  
+                </ion-col>
+                
+              </ion-row>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </ion-content>      
+
+

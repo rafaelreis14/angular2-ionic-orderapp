@@ -1,0 +1,7 @@
+<ion-tabs>
+  
+  <ion-tab tabIcon="list" tabTitle="Itens" [root]="orderDetailItens" tabBadge="{{totalItens}}" tabBadgeStyle="danger"></ion-tab>
+  <ion-tab tabIcon="person-add" tabTitle="Cliente" [root]="orderDetailCustomer"></ion-tab>
+  <ion-tab tabIcon="md-cash" tabTitle="Pagamento" [root]="orderDetailPayment" tabBadge="{{totalPayment}}" tabBadgeStyle="danger"></ion-tab>  
+  <ion-tab tabIcon="cart" tabTitle="Finalizar" [root]="orderDetail"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,15 @@
+page-order-detail-itens {
+    
+    .item-where-local{
+        color: color($colors, secondary);
+    }
+
+    .item-where-deposit{
+        color: $theme-color-4;//color($colors, secondary);
+        
+    }
+    .no-padding {
+        padding: 0px !important;
+    }
+
+}
